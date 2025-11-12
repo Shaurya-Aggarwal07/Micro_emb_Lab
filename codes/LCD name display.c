@@ -1,3 +1,14 @@
+// Define LCD Control Pins on PORTC 
+#define rs PORTC.F0 
+#define rw PORTC.F1 
+#define en PORTC.F2 
+
+unsigned int j; 
+unsigned int i; 
+
+void delay_custom(); 
+void lcd_init(); 
+
 void cmd(unsigned char a);
 void dat(unsigned char b);
 void show(unsigned char *s);
