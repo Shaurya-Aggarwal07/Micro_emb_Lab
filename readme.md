@@ -26,6 +26,20 @@ NOTE- for any extra dialog box asking Y/N choose Y
 1. click on gear icon to build
 2. go to line 102 and replace the while loop with this code:
 ```
+uint16_t adc_value;
+char msg[10];
+
+while (1)
+{
+    HAL_ADC_Start(&hadc1);
+    HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
+    adc_value = HAL_ADC_GetValue(&hadc1);
+
+    sprintf(msg, "%hu\r\n", adc_value);
+    HAL_UART_Transmit(&huart2, (uint8_t *)msg, strlen(msg), HAL_MAX_DELAY);
+
+    HAL_Delay(1000);
+}
 
 ```
 3. click on debug and then run pe click kro
