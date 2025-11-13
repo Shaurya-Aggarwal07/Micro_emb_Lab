@@ -14,8 +14,30 @@ NOTE- for any extra dialog box asking Y/N choose Y
 7. Now in the code that appears, go to while(1) loop inside main function and write:
 ``` HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);```
 8. Save the .c file
-9. Go to project option in navbar & click build all
+9. Go to project option in navbar & click build all 
 10. Connect Nucleo board with PC & press run in IDE
 11. Click OK in the Edit dialog box
 12. Press reset button the board
 ---
+## STM:32 (ADC)
+- choose f401 nucleo board
+- we will change config of A0 pin to ADC1_xx
+- instead of step6 of above do this:
+1. click on gear icon to build
+2. go to line 102 and replace the while loop with this code:
+```
+
+```
+3. click on debug and then run pe click kro
+4. STM ka kaam hogya
+5. Open PuTTy
+    - Choose serial
+    - set speed to 115200
+    - select com
+    - ensure arduino is connected to pc
+    - ensure potentiometer is connected to arduino as follows:
+        - jaha se cylinder nikal raha hai usko apne face ki taraf karke
+        - bich wali wire at A0
+        - left wali wire at Vcc (5volt)
+        - right wali at Gnd
+    - select open
