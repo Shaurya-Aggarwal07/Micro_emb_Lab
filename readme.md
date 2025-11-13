@@ -25,7 +25,7 @@ NOTE- for any extra dialog box asking Y/N choose Y
 - instead of step6 of above do this:
 1. click on gear icon to build
 2. go to line 102 and replace the while loop with this code:
-```
+```c
 uint16_t adc_value;
 char msg[10];
 
